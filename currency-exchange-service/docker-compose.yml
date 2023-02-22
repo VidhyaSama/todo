@@ -1,0 +1,35 @@
+version: "3.9"
+
+services:
+
+  sql_db:
+    image: mysql:8
+    restart: always
+    ports:
+      - "3307:3306"
+    environment:
+      - MYSQL_PASSWORD=jim
+      - MYSQL_ROOT_PASSWORD=jim
+      - MYSQL_USER=jim
+      - MYSQL_DATABASE=currency
+    networks:
+      - currency-network
+   
+  currency-exchange:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports: 
+       - "8000:8000"
+    depends_on:
+      - sql_db
+    networks:
+      - currency-network
+    environment:
+      - SPRING_DATASOURCE_USERNAME=jim
+      - SPRING_DATASOURCE_URL=jdbc:mysql://sql_db:3307/currency?enabledTLSProtocols=TLSv1.2
+      - SPRING_DATASOURCE_PASSWORD=jim
+
+networks:
+  currency-network:
+    driver: bridge

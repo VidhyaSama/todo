@@ -1,0 +1,211 @@
+*-Restful Web Services with Spring Boot
+
+#Student-Course Application
+
+Description:
+
+Student can enroll to a single course and many students can attend one single course also created RESTful endpoints to perform CRUD operations on the Course and Student entities and also performed exception handling, Validations and Dynamic filetering. 
+
+Softwares
+-------------
+-Java 8
+-Eclipse
+-Maven
+-Embedded Tomcat
+-MySQL Workbench
+
+Note: Used swagger as the RestServices Client
+
+URLS
+-------
+http://localhost:8082/upskill/swagger-ui.html
+
+#COURSE CONTROLLER
+1)Add a course: post/course
+
+Requestbody: {
+  "courseCode": "101",
+  "courseDescription": "Ecology",
+  "price": 1000
+}
+
+Response : 201
+Undocumented
+Response headers
+ connection: keep-alive 
+ content-length: 0 
+ date: Sat,25 Dec 2021 15:27:46 GMT 
+ keep-alive: timeout=60 
+ location: http://localhost:8082/upskill/course 
+
+
+--Course code should be 3 digits and course Description should contain atleast 3 characters
+Eg:Requestbody: {
+  "courseCode": "string",
+  "courseDescription":"",
+  "price": 0
+}
+response:{
+  "timeStamp": "2021-12-25T15:19:40.357+00:00",
+  "message": "Validation failed",
+  "details": [
+    "Course Description cannot be blank",
+    "courseDescription should contain atleast 3 and atmost 16 in length"
+  ]
+}
+
+--Course code should be unique else response shows a Customized Message Structure
+
+Error: response status is 302
+{
+  "timeStamp": "2021-12-25T15:23:31.013+00:00",
+  "message": "RecordAvailable",
+  "details": [
+    "Course with the 105 already available"
+  ]
+}
+
+2)Update course Details:put/course/1
+Requestbody: {
+  "courseCode": "110",
+  "courseDescription": "cosmotology",
+  "price": 900
+}
+
+Response:
+{
+    "courseCode": "110",
+    "courseDescription": "cosmotology",
+    "price": 900
+}
+Note: Based on our requirement we can update update any field
+
+3)Get course based on id : get/course/1
+Responsebody: {
+    "courseCode": "101",
+    "courseDescription": "Ecology",
+    "price": 1000
+}
+Get request to a non existing resource.
+The response shows a Customized Message Structure
+Error: response status is 404
+
+--Response body
+{
+  "timeStamp": "2021-12-25T16:03:18.379+00:00",
+  "message": "Record Not Found",
+  "details": [
+    "Course Not Found"
+  ]
+}
+
+4)Get all courses: get/course
+[
+  {
+    "courseCode": "101",
+    "courseDescription": "Ecology",
+    "price": 1000
+  },
+  {
+    "courseCode": "110",
+    "courseDescription": "cosmotology",
+    "price": 900
+  },
+  
+]
+
+5)Delete course :Delete/course/1 
+
+Removes the course along with mapped students.
+
+Response : 204 status code 
+
+#STUDENT_CONTROLLER
+1) Add student with course: post/student
+
+Request body:{
+  "name": "vidhya",
+  "rollNumber": "12jj19",
+  "course": {
+    "courseCode": "110"
+  }
+}
+
+Response: 201 status code
+
+--Roll number should be unique with validation error 
+
+Error: response status is 302
+
+Response body
+{
+  "timeStamp": "2021-12-25T16:54:57.400+00:00",
+  "message": "RecordAvailable",
+  "details": [
+    "12jj19 Already registered with course "
+  ]
+}
+
+2) Get all studentDetails : get/student
+
+[
+  {
+    "name": "vidhya",
+    "rollNumber": "12jj12",
+    "course": {
+      "courseCode": "110",
+      "courseDescription": "cosmotology",
+      "price": 900
+    }
+  }
+]
+
+3) Get student with given id : get/student/1
+
+{
+  "name": "vidhya",
+  "rollNumber": "12jj12",
+  "course": {
+    "courseCode": "110",
+    "courseDescription": "cosmotology",
+    "price": 900
+  }
+}
+Get request to a non existing resource.
+The response shows a Customized Message Structure
+
+Error: response status is 404
+
+Response body
+{
+  "timeStamp": "2021-12-25T16:58:57.887+00:00",
+  "message": "Record Not Found",
+  "details": [
+    "Student not Found"
+  ]
+}
+
+4)Update student details:put/student/1
+
+Request body:{
+  "name": "sama vidhya",
+  "rollNumber": "12jj14",
+  "course": {
+    "courseCode": "101"
+  }
+}
+
+Response body:
+{
+  "name": "sama vidhya",
+  "rollNumber": "12jj14",
+  "course": {
+    "courseCode": "101",
+    "courseDescription": "ecology",
+    "price": 1000
+  }
+}
+5)Delete student:delete/1
+
+Response : 204 status code 
+

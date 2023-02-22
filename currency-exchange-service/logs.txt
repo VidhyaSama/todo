@@ -1,0 +1,918 @@
+Starting currency-exchange-service_sql_db_1 ... done
+Starting currency-exchange-service_currency-exchange_1 ... done
+Attaching to currency-exchange-service_sql_db_1, currency-exchange-service_currency-exchange_1
+sql_db_1             | 2022-01-04 06:25:51+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.27-1debian10 started.
+sql_db_1             | 2022-01-04 06:25:51+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+sql_db_1             | 2022-01-04 06:25:51+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.27-1debian10 started.
+sql_db_1             | 2022-01-04T06:25:52.188771Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0.27) starting as process 1
+sql_db_1             | 2022-01-04T06:25:52.253886Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+sql_db_1             | 2022-01-04T06:25:53.969128Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+sql_db_1             | 2022-01-04T06:25:54.821958Z 0 [System] [MY-010229] [Server] Starting XA crash recovery...
+sql_db_1             | 2022-01-04T06:25:54.843246Z 0 [System] [MY-010232] [Server] XA crash recovery finished.
+sql_db_1             | 2022-01-04T06:25:55.530501Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1 is enabled for channel mysql_main
+sql_db_1             | 2022-01-04T06:25:55.530650Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1.1 is enabled for channel mysql_main
+sql_db_1             | 2022-01-04T06:25:55.533737Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+sql_db_1             | 2022-01-04T06:25:55.533915Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+sql_db_1             | 2022-01-04T06:25:55.728512Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+sql_db_1             | 2022-01-04T06:25:55.825376Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /var/run/mysqld/mysqlx.sock
+sql_db_1             | 2022-01-04T06:25:55.831545Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.27'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
+currency-exchange_1  |
+currency-exchange_1  |   .   ____          _            __ _ _
+currency-exchange_1  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+currency-exchange_1  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+currency-exchange_1  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+currency-exchange_1  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+currency-exchange_1  |  =========|_|==============|___/=/_/_/_/
+currency-exchange_1  |  :: Spring Boot ::                (v2.6.1)
+currency-exchange_1  |
+currency-exchange_1  | 2022-01-04 06:26:00.896  INFO [curency-exchange-service,,] 1 --- [           main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+currency-exchange_1  | 2022-01-04 06:26:01.294  INFO [curency-exchange-service,,] 1 --- [           main] c.c.c.ConfigServicePropertySourceLocator : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
+currency-exchange_1  | 2022-01-04 06:26:01.295  WARN [curency-exchange-service,,] 1 --- [           main] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/curency-exchange-service/default": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)
+currency-exchange_1  | 2022-01-04 06:26:01.301  INFO [curency-exchange-service,,] 1 --- [           main] c.m.c.CurrencyExchangeServiceApplication : No active profile set, falling back to default profiles: default
+currency-exchange_1  | 2022-01-04 06:26:03.634  INFO [curency-exchange-service,,] 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+currency-exchange_1  | 2022-01-04 06:26:04.260  INFO [curency-exchange-service,,] 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 588 ms. Found 1 JPA repository interfaces.
+currency-exchange_1  | 2022-01-04 06:26:05.926  INFO [curency-exchange-service,,] 1 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=fd17d756-6948-37a3-b190-f0d323e8361d
+currency-exchange_1  | 2022-01-04 06:26:08.921  WARN [curency-exchange-service,,] 1 --- [           main] o.s.c.s.a.z.ZipkinAutoConfiguration      : Check result of the [RestTemplateSender{http://localhost:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)}]
+currency-exchange_1  | 2022-01-04 06:26:10.187  INFO [curency-exchange-service,,] 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8000 (http)
+currency-exchange_1  | 2022-01-04 06:26:10.231  INFO [curency-exchange-service,,] 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+currency-exchange_1  | 2022-01-04 06:26:10.233  INFO [curency-exchange-service,,] 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+currency-exchange_1  | 2022-01-04 06:26:10.487  INFO [curency-exchange-service,,] 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+currency-exchange_1  | 2022-01-04 06:26:10.487  INFO [curency-exchange-service,,] 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 9095 ms
+currency-exchange_1  | Loading class `com.mysql.jdbc.Driver'. This is deprecated. The new driver class is `com.mysql.cj.jdbc.Driver'. The driver is automatically registered via the SPI and manual loading of the driver class is generally unnecessary.
+currency-exchange_1  | 2022-01-04 06:26:11.794  INFO [curency-exchange-service,,] 1 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+currency-exchange_1  | 2022-01-04 06:26:12.053  INFO [curency-exchange-service,,] 1 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.1.Final
+currency-exchange_1  | 2022-01-04 06:26:12.647  INFO [curency-exchange-service,,] 1 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+currency-exchange_1  | 2022-01-04 06:26:12.953  INFO [curency-exchange-service,,] 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+currency-exchange_1  | 2022-01-04 06:26:12.963  WARN [curency-exchange-service,,] 1 --- [           main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+currency-exchange_1  | 2022-01-04 06:26:14.266 ERROR [curency-exchange-service,,] 1 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+currency-exchange_1  |
+currency-exchange_1  | com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+currency-exchange_1  |
+currency-exchange_1  | The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+currency-exchange_1  |  at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:448) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-4.0.3.jar!/:na]
+currency-exchange_1  |  at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364) ~[HikariCP-4.0.3.jar!/:na]
+currency-exchange_1  |  at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-4.0.3.jar!/:na]
+currency-exchange_1  |  at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476) [HikariCP-4.0.3.jar!/:na]
+currency-exchange_1  |  at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) [HikariCP-4.0.3.jar!/:na]
+currency-exchange_1  |  at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) [HikariCP-4.0.3.jar!/:na]
+currency-exchange_1  |  at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) [HikariCP-4.0.3.jar!/:na]
+currency-exchange_1  |  at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:181) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:178) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:175) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1460) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1494) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) [spring-orm-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) [spring-orm-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) [spring-orm-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) [spring-orm-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) [spring-orm-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) [spring-beans-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) [spring-beans-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) [spring-beans-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) [spring-beans-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) [spring-beans-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) [spring-beans-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) [spring-beans-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.1.jar!/:2.6.1]
+currency-exchange_1  |  at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:730) ~[spring-boot-2.6.1.jar!/:2.6.1]
+currency-exchange_1  |  at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:412) ~[spring-boot-2.6.1.jar!/:2.6.1]
+currency-exchange_1  |  at org.springframework.boot.SpringApplication.run(SpringApplication.java:302) ~[spring-boot-2.6.1.jar!/:2.6.1]
+currency-exchange_1  |  at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.1.jar!/:2.6.1]
+currency-exchange_1  |  at org.springframework.boot.SpringApplication.run(SpringApplication.java:1290) ~[spring-boot-2.6.1.jar!/:2.6.1]
+currency-exchange_1  |  at com.microservices.currencyexchangeservice.CurrencyExchangeServiceApplication.main(CurrencyExchangeServiceApplication.java:15) ~[classes!/:0.0.1-SNAPSHOT]
+currency-exchange_1  |  at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_312]
+currency-exchange_1  |  at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_312]
+currency-exchange_1  |  at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_312]
+currency-exchange_1  |  at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_312]
+currency-exchange_1  |  at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49) ~[demo.jar:0.0.1-SNAPSHOT]
+currency-exchange_1  |  at org.springframework.boot.loader.Launcher.launch(Launcher.java:108) ~[demo.jar:0.0.1-SNAPSHOT]
+currency-exchange_1  |  at org.springframework.boot.loader.Launcher.launch(Launcher.java:58) ~[demo.jar:0.0.1-SNAPSHOT]
+currency-exchange_1  |  at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:88) ~[demo.jar:0.0.1-SNAPSHOT]
+currency-exchange_1  | Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+currency-exchange_1  |
+currency-exchange_1  | The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+currency-exchange_1  |  at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_312]
+currency-exchange_1  |  at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_312]
+currency-exchange_1  |  at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_312]
+currency-exchange_1  |  at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[na:1.8.0_312]
+currency-exchange_1  |  at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.NativeSession.connect(NativeSession.java:120) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:948) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:818) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  ... 57 common frames omitted
+currency-exchange_1  | Caused by: java.net.ConnectException: Connection refused (Connection refused)
+currency-exchange_1  |  at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_312]
+currency-exchange_1  |  at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_312]
+currency-exchange_1  |  at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_312]
+currency-exchange_1  |  at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_312]
+currency-exchange_1  |  at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_312]
+currency-exchange_1  |  at java.net.Socket.connect(Socket.java:607) ~[na:1.8.0_312]
+currency-exchange_1  |  at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:156) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  ... 60 common frames omitted
+currency-exchange_1  |
+currency-exchange_1  | 2022-01-04 06:26:14.272  WARN [curency-exchange-service,,] 1 --- [           main] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
+currency-exchange_1  |
+currency-exchange_1  | com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+currency-exchange_1  |
+currency-exchange_1  | The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+currency-exchange_1  |  at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:448) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-4.0.3.jar!/:na]
+currency-exchange_1  |  at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364) ~[HikariCP-4.0.3.jar!/:na]
+currency-exchange_1  |  at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-4.0.3.jar!/:na]
+currency-exchange_1  |  at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476) ~[HikariCP-4.0.3.jar!/:na]
+currency-exchange_1  |  at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) ~[HikariCP-4.0.3.jar!/:na]
+currency-exchange_1  |  at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-4.0.3.jar!/:na]
+currency-exchange_1  |  at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-4.0.3.jar!/:na]
+currency-exchange_1  |  at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) ~[hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:181) ~[hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:178) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:175) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1460) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1494) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) [spring-orm-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) [spring-orm-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) [spring-orm-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) [spring-orm-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) [spring-orm-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) [spring-beans-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) [spring-beans-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) [spring-beans-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) [spring-beans-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) [spring-beans-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) [spring-beans-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) [spring-beans-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.1.jar!/:2.6.1]
+currency-exchange_1  |  at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:730) ~[spring-boot-2.6.1.jar!/:2.6.1]
+currency-exchange_1  |  at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:412) ~[spring-boot-2.6.1.jar!/:2.6.1]
+currency-exchange_1  |  at org.springframework.boot.SpringApplication.run(SpringApplication.java:302) ~[spring-boot-2.6.1.jar!/:2.6.1]
+currency-exchange_1  |  at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.1.jar!/:2.6.1]
+currency-exchange_1  |  at org.springframework.boot.SpringApplication.run(SpringApplication.java:1290) ~[spring-boot-2.6.1.jar!/:2.6.1]
+currency-exchange_1  |  at com.microservices.currencyexchangeservice.CurrencyExchangeServiceApplication.main(CurrencyExchangeServiceApplication.java:15) ~[classes!/:0.0.1-SNAPSHOT]
+currency-exchange_1  |  at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_312]
+currency-exchange_1  |  at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_312]
+currency-exchange_1  |  at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_312]
+currency-exchange_1  |  at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_312]
+currency-exchange_1  |  at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49) ~[demo.jar:0.0.1-SNAPSHOT]
+currency-exchange_1  |  at org.springframework.boot.loader.Launcher.launch(Launcher.java:108) ~[demo.jar:0.0.1-SNAPSHOT]
+currency-exchange_1  |  at org.springframework.boot.loader.Launcher.launch(Launcher.java:58) ~[demo.jar:0.0.1-SNAPSHOT]
+currency-exchange_1  |  at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:88) ~[demo.jar:0.0.1-SNAPSHOT]
+currency-exchange_1  | Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+currency-exchange_1  |
+currency-exchange_1  | The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+currency-exchange_1  |  at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_312]
+currency-exchange_1  |  at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_312]
+currency-exchange_1  |  at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_312]
+currency-exchange_1  |  at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[na:1.8.0_312]
+currency-exchange_1  |  at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.NativeSession.connect(NativeSession.java:120) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:948) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:818) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  ... 57 common frames omitted
+currency-exchange_1  | Caused by: java.net.ConnectException: Connection refused (Connection refused)
+currency-exchange_1  |  at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_312]
+currency-exchange_1  |  at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_312]
+currency-exchange_1  |  at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_312]
+currency-exchange_1  |  at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_312]
+currency-exchange_1  |  at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_312]
+currency-exchange_1  |  at java.net.Socket.connect(Socket.java:607) ~[na:1.8.0_312]
+currency-exchange_1  |  at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:156) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  ... 60 common frames omitted
+currency-exchange_1  |
+currency-exchange_1  | 2022-01-04 06:26:14.331  INFO [curency-exchange-service,,] 1 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+currency-exchange_1  | Hibernate: drop table if exists currency_exchange
+currency-exchange_1  | 2022-01-04 06:26:16.240  INFO [curency-exchange-service,,] 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+currency-exchange_1  | 2022-01-04 06:26:16.241  WARN [curency-exchange-service,,] 1 --- [           main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+currency-exchange_1  | 2022-01-04 06:26:17.249 ERROR [curency-exchange-service,,] 1 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+currency-exchange_1  |
+currency-exchange_1  | com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+currency-exchange_1  |
+currency-exchange_1  | The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+currency-exchange_1  |  at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:448) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-4.0.3.jar!/:na]
+currency-exchange_1  |  at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364) ~[HikariCP-4.0.3.jar!/:na]
+currency-exchange_1  |  at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-4.0.3.jar!/:na]
+currency-exchange_1  |  at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476) [HikariCP-4.0.3.jar!/:na]
+currency-exchange_1  |  at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) [HikariCP-4.0.3.jar!/:na]
+currency-exchange_1  |  at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) [HikariCP-4.0.3.jar!/:na]
+currency-exchange_1  |  at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) [HikariCP-4.0.3.jar!/:na]
+currency-exchange_1  |  at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:181) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:44) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.jdbcStatement(GenerationTargetToDatabase.java:77) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:53) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:241) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:153) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:81) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:327) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498) [hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) [spring-orm-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) [spring-orm-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) [spring-orm-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) [spring-orm-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) [spring-orm-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) [spring-beans-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) [spring-beans-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) [spring-beans-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) [spring-beans-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) [spring-beans-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) [spring-beans-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) [spring-beans-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.1.jar!/:2.6.1]
+currency-exchange_1  |  at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:730) ~[spring-boot-2.6.1.jar!/:2.6.1]
+currency-exchange_1  |  at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:412) ~[spring-boot-2.6.1.jar!/:2.6.1]
+currency-exchange_1  |  at org.springframework.boot.SpringApplication.run(SpringApplication.java:302) ~[spring-boot-2.6.1.jar!/:2.6.1]
+currency-exchange_1  |  at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.1.jar!/:2.6.1]
+currency-exchange_1  |  at org.springframework.boot.SpringApplication.run(SpringApplication.java:1290) ~[spring-boot-2.6.1.jar!/:2.6.1]
+currency-exchange_1  |  at com.microservices.currencyexchangeservice.CurrencyExchangeServiceApplication.main(CurrencyExchangeServiceApplication.java:15) ~[classes!/:0.0.1-SNAPSHOT]
+currency-exchange_1  |  at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_312]
+currency-exchange_1  |  at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_312]
+currency-exchange_1  |  at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_312]
+currency-exchange_1  |  at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_312]
+currency-exchange_1  |  at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49) ~[demo.jar:0.0.1-SNAPSHOT]
+currency-exchange_1  |  at org.springframework.boot.loader.Launcher.launch(Launcher.java:108) ~[demo.jar:0.0.1-SNAPSHOT]
+currency-exchange_1  |  at org.springframework.boot.loader.Launcher.launch(Launcher.java:58) ~[demo.jar:0.0.1-SNAPSHOT]
+currency-exchange_1  |  at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:88) ~[demo.jar:0.0.1-SNAPSHOT]
+currency-exchange_1  | Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+currency-exchange_1  |
+currency-exchange_1  | The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+currency-exchange_1  |  at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_312]
+currency-exchange_1  |  at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_312]
+currency-exchange_1  |  at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_312]
+currency-exchange_1  |  at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[na:1.8.0_312]
+currency-exchange_1  |  at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.NativeSession.connect(NativeSession.java:120) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:948) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:818) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  ... 57 common frames omitted
+currency-exchange_1  | Caused by: java.net.ConnectException: Connection refused (Connection refused)
+currency-exchange_1  |  at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_312]
+currency-exchange_1  |  at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_312]
+currency-exchange_1  |  at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_312]
+currency-exchange_1  |  at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_312]
+currency-exchange_1  |  at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_312]
+currency-exchange_1  |  at java.net.Socket.connect(Socket.java:607) ~[na:1.8.0_312]
+currency-exchange_1  |  at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:156) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  ... 60 common frames omitted
+currency-exchange_1  |
+currency-exchange_1  | 2022-01-04 06:26:17.252  WARN [curency-exchange-service,,] 1 --- [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 08S01
+currency-exchange_1  | 2022-01-04 06:26:17.252 ERROR [curency-exchange-service,,] 1 --- [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Communications link failure
+currency-exchange_1  |
+currency-exchange_1  | The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+currency-exchange_1  | 2022-01-04 06:26:17.266 ERROR [curency-exchange-service,,] 1 --- [           main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+currency-exchange_1  | 2022-01-04 06:26:17.267  WARN [curency-exchange-service,,] 1 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+currency-exchange_1  | 2022-01-04 06:26:18.269  WARN [curency-exchange-service,,] 1 --- [           main] z.r.AsyncReporter$BoundedAsyncReporter   : Timed out waiting for in-flight spans to send
+currency-exchange_1  | 2022-01-04 06:26:18.274  INFO [curency-exchange-service,,] 1 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+currency-exchange_1  | 2022-01-04 06:26:18.339  INFO [curency-exchange-service,,] 1 --- [           main] ConditionEvaluationReportLoggingListener :
+currency-exchange_1  |
+currency-exchange_1  | Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+currency-exchange_1  | 2022-01-04 06:26:18.428 ERROR [curency-exchange-service,,] 1 --- [           main] o.s.boot.SpringApplication               : Application run failed
+currency-exchange_1  |
+currency-exchange_1  | org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+currency-exchange_1  |  at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.1.jar!/:2.6.1]
+currency-exchange_1  |  at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:730) [spring-boot-2.6.1.jar!/:2.6.1]
+currency-exchange_1  |  at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:412) [spring-boot-2.6.1.jar!/:2.6.1]
+currency-exchange_1  |  at org.springframework.boot.SpringApplication.run(SpringApplication.java:302) [spring-boot-2.6.1.jar!/:2.6.1]
+currency-exchange_1  |  at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) [spring-boot-2.6.1.jar!/:2.6.1]
+currency-exchange_1  |  at org.springframework.boot.SpringApplication.run(SpringApplication.java:1290) [spring-boot-2.6.1.jar!/:2.6.1]
+currency-exchange_1  |  at com.microservices.currencyexchangeservice.CurrencyExchangeServiceApplication.main(CurrencyExchangeServiceApplication.java:15) [classes!/:0.0.1-SNAPSHOT]
+currency-exchange_1  |  at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_312]
+currency-exchange_1  |  at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_312]
+currency-exchange_1  |  at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_312]
+currency-exchange_1  |  at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_312]
+currency-exchange_1  |  at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49) [demo.jar:0.0.1-SNAPSHOT]
+currency-exchange_1  |  at org.springframework.boot.loader.Launcher.launch(Launcher.java:108) [demo.jar:0.0.1-SNAPSHOT]
+currency-exchange_1  |  at org.springframework.boot.loader.Launcher.launch(Launcher.java:58) [demo.jar:0.0.1-SNAPSHOT]
+currency-exchange_1  |  at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:88) [demo.jar:0.0.1-SNAPSHOT]
+currency-exchange_1  | Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+currency-exchange_1  |  at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421) ~[spring-orm-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  ... 24 common frames omitted
+currency-exchange_1  | Caused by: org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+currency-exchange_1  |  at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:112) ~[hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:37) ~[hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113) ~[hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99) ~[hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:71) ~[hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.jdbcStatement(GenerationTargetToDatabase.java:77) ~[hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:53) ~[hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375) ~[hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359) ~[hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:241) ~[hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154) ~[hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126) ~[hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112) ~[hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:153) ~[hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:81) ~[hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:327) ~[hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471) ~[hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498) ~[hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.13.jar!/:5.3.13]
+currency-exchange_1  |  ... 28 common frames omitted
+currency-exchange_1  | Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+currency-exchange_1  |
+currency-exchange_1  | The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+currency-exchange_1  |  at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:448) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-4.0.3.jar!/:na]
+currency-exchange_1  |  at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364) ~[HikariCP-4.0.3.jar!/:na]
+currency-exchange_1  |  at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-4.0.3.jar!/:na]
+currency-exchange_1  |  at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476) ~[HikariCP-4.0.3.jar!/:na]
+currency-exchange_1  |  at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) ~[HikariCP-4.0.3.jar!/:na]
+currency-exchange_1  |  at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-4.0.3.jar!/:na]
+currency-exchange_1  |  at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-4.0.3.jar!/:na]
+currency-exchange_1  |  at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) ~[hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:181) ~[hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:44) ~[hibernate-core-5.6.1.Final.jar!/:5.6.1.Final]
+currency-exchange_1  |  ... 44 common frames omitted
+currency-exchange_1  | Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+currency-exchange_1  |
+currency-exchange_1  | The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+currency-exchange_1  |  at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_312]
+currency-exchange_1  |  at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_312]
+currency-exchange_1  |  at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_312]
+currency-exchange_1  |  at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[na:1.8.0_312]
+currency-exchange_1  |  at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.NativeSession.connect(NativeSession.java:120) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:948) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:818) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  ... 57 common frames omitted
+currency-exchange_1  | Caused by: java.net.ConnectException: Connection refused (Connection refused)
+currency-exchange_1  |  at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_312]
+currency-exchange_1  |  at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_312]
+currency-exchange_1  |  at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_312]
+currency-exchange_1  |  at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_312]
+currency-exchange_1  |  at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_312]
+currency-exchange_1  |  at java.net.Socket.connect(Socket.java:607) ~[na:1.8.0_312]
+currency-exchange_1  |  at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:156) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63) ~[mysql-connector-java-8.0.27.jar!/:8.0.27]
+currency-exchange_1  |  ... 60 common frames omitted
+currency-exchange_1  |
+currency-exchange_1  | Exception in thread "Thread-4" zipkin2.reporter.ClosedSenderException
+currency-exchange_1  |  at zipkin2.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:265)
+currency-exchange_1  |  at org.springframework.cloud.sleuth.autoconfig.zipkin2.ZipkinAutoConfiguration$2.run(ZipkinAutoConfiguration.java:142)
+currency-exchange-service_currency-exchange_1 exited with code 1
+sql_db_1             | mbind: Operation not permitted
+sql_db_1             | mbind: Operation not permitted
+sql_db_1             | 2022-01-04T06:42:45.227247Z 0 [System] [MY-013172] [Server] Received SHUTDOWN from user <via user signal>. Shutting down mysqld (Version: 8.0.27).
+sql_db_1             | 2022-01-04T06:42:47.229043Z 0 [Warning] [MY-010909] [Server] /usr/sbin/mysqld: Forcing close of thread 16  user: 'jim'.
+sql_db_1             | 2022-01-04T06:42:47.229277Z 0 [Warning] [MY-010909] [Server] /usr/sbin/mysqld: Forcing close of thread 8  user: 'jim'.
+sql_db_1             | 2022-01-04T06:42:47.229620Z 0 [Warning] [MY-010909] [Server] /usr/sbin/mysqld: Forcing close of thread 17  user: 'jim'.
+sql_db_1             | 2022-01-04T06:42:47.229694Z 0 [Warning] [MY-010909] [Server] /usr/sbin/mysqld: Forcing close of thread 12  user: 'jim'.
+sql_db_1             | 2022-01-04T06:42:48.221272Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+currency-exchange-service_sql_db_1 exited with code 0
+
+C:\Users\vidhya.sama\Documents\Vidhya\currency-exchange-service>docker images
+REPOSITORY                                    TAG              IMAGE ID       CREATED        SIZE
+currency-exchange-service_currency-exchange   latest           3f83138a6abc   2 hours ago    592MB
+mysql                                         8                3218b38490ce   2 weeks ago    516MB
+openzipkin/zipkin                             2.23             0614d392dbc2   2 weeks ago    155MB
+openzipkin/zipkin                             latest           0614d392dbc2   2 weeks ago    155MB
+paketobuildpacks/run                          base-cnb         a6fc5afbe7bb   2 weeks ago    87.2MB
+alpine/git                                    latest           c6b70534b534   6 weeks ago    27.4MB
+n9064/msa-currency-exchange-service           0.0.1-SNAPSHOT   927933cd1b9c   42 years ago   275MB
+paketobuildpacks/builder                      base             4b05ea13a19a   42 years ago   775MB
+
+C:\Users\vidhya.sama\Documents\Vidhya\currency-exchange-service>docker run --env-file currency.txt -p 8000:8000 n9064/msa-currency-exchange-service:0.0.1-SNAPSHOT
+docker: open currency.txt: The system cannot find the file specified.
+See 'docker run --help'.
+
+C:\Users\vidhya.sama\Documents\Vidhya\currency-exchange-service>docker run --env-file currency.env -p 8000:8000 n9064/msa-currency-exchange-service:0.0.1-SNAPSHOT
+docker: Error response from daemon: Ports are not available: listen tcp 0.0.0.0:8000: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+
+C:\Users\vidhya.sama\Documents\Vidhya\currency-exchange-service>docker run --env-file currency.env -p 8001:8000 n9064/msa-currency-exchange-service:0.0.1-SNAPSHOT
+Setting Active Processor Count to 4
+Calculating JVM memory based on 11321556K available memory
+Calculated JVM Memory Configuration: -XX:MaxDirectMemorySize=10M -Xmx10667836K -XX:MaxMetaspaceSize=141719K -XX:ReservedCodeCacheSize=240M -Xss1M (Total Memory: 11321556K, Thread Count: 250, Loaded Class Count: 22607, Headroom: 0%)
+Enabling Java Native Memory Tracking
+Adding 128 container CA certificates to JVM truststore
+Spring Cloud Bindings Enabled
+Picked up JAVA_TOOL_OPTIONS: -Djava.security.properties=/layers/paketo-buildpacks_bellsoft-liberica/java-security-properties/java-security.properties -XX:+ExitOnOutOfMemoryError -XX:ActiveProcessorCount=4 -XX:MaxDirectMemorySize=10M -Xmx10667836K -XX:MaxMetaspaceSize=141719K -XX:ReservedCodeCacheSize=240M -Xss1M -XX:+UnlockDiagnosticVMOptions -XX:NativeMemoryTracking=summary -XX:+PrintNMTStatistics -Dorg.springframework.cloud.bindings.boot.enable=true
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.6.1)
+
+2022-01-04 07:17:45.054  INFO [curency-exchange-service,,] 1 --- [           main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2022-01-04 07:17:45.576  INFO [curency-exchange-service,,] 1 --- [           main] c.c.c.ConfigServicePropertySourceLocator : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
+2022-01-04 07:17:45.577  WARN [curency-exchange-service,,] 1 --- [           main] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/curency-exchange-service/default": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)
+2022-01-04 07:17:45.592  INFO [curency-exchange-service,,] 1 --- [           main] c.m.c.CurrencyExchangeServiceApplication : No active profile set, falling back to default profiles: default
+2022-01-04 07:17:48.832  INFO [curency-exchange-service,,] 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-01-04 07:17:49.889  INFO [curency-exchange-service,,] 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 978 ms. Found 1 JPA repository interfaces.
+2022-01-04 07:17:51.892  INFO [curency-exchange-service,,] 1 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=fd17d756-6948-37a3-b190-f0d323e8361d
+2022-01-04 07:17:55.642  WARN [curency-exchange-service,,] 1 --- [           main] o.s.c.s.a.z.ZipkinAutoConfiguration      : Check result of the [RestTemplateSender{http://localhost:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)}]
+2022-01-04 07:17:57.108  INFO [curency-exchange-service,,] 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8000 (http)
+2022-01-04 07:17:57.146  INFO [curency-exchange-service,,] 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-04 07:17:57.152  INFO [curency-exchange-service,,] 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2022-01-04 07:17:57.357  INFO [curency-exchange-service,,] 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-04 07:17:57.358  INFO [curency-exchange-service,,] 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 11687 ms
+Loading class `com.mysql.jdbc.Driver'. This is deprecated. The new driver class is `com.mysql.cj.jdbc.Driver'. The driver is automatically registered via the SPI and manual loading of the driver class is generally unnecessary.
+2022-01-04 07:17:58.618  INFO [curency-exchange-service,,] 1 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-01-04 07:17:58.920  INFO [curency-exchange-service,,] 1 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.1.Final
+2022-01-04 07:17:59.861  INFO [curency-exchange-service,,] 1 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-01-04 07:18:00.313  INFO [curency-exchange-service,,] 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-01-04 07:18:00.329  WARN [curency-exchange-service,,] 1 --- [           main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2022-01-04 07:18:03.093 ERROR [curency-exchange-service,,] 1 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+        at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:448) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-4.0.3.jar:na]
+        at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364) ~[HikariCP-4.0.3.jar:na]
+        at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-4.0.3.jar:na]
+        at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476) [HikariCP-4.0.3.jar:na]
+        at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) [HikariCP-4.0.3.jar:na]
+        at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) [HikariCP-4.0.3.jar:na]
+        at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) [HikariCP-4.0.3.jar:na]
+        at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:181) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:178) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:175) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1460) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1494) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) [spring-orm-5.3.13.jar:5.3.13]
+        at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) [spring-orm-5.3.13.jar:5.3.13]
+        at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) [spring-orm-5.3.13.jar:5.3.13]
+        at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) [spring-orm-5.3.13.jar:5.3.13]
+        at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) [spring-orm-5.3.13.jar:5.3.13]
+        at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) [spring-beans-5.3.13.jar:5.3.13]
+        at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) [spring-beans-5.3.13.jar:5.3.13]
+        at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) [spring-beans-5.3.13.jar:5.3.13]
+        at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) [spring-beans-5.3.13.jar:5.3.13]
+        at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) [spring-beans-5.3.13.jar:5.3.13]
+        at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.13.jar:5.3.13]
+        at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) [spring-beans-5.3.13.jar:5.3.13]
+        at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) [spring-beans-5.3.13.jar:5.3.13]
+        at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.13.jar:5.3.13]
+        at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.13.jar:5.3.13]
+        at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.13.jar:5.3.13]
+        at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.1.jar:2.6.1]
+        at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:730) ~[spring-boot-2.6.1.jar:2.6.1]
+        at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:412) ~[spring-boot-2.6.1.jar:2.6.1]
+        at org.springframework.boot.SpringApplication.run(SpringApplication.java:302) ~[spring-boot-2.6.1.jar:2.6.1]
+        at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.1.jar:2.6.1]
+        at org.springframework.boot.SpringApplication.run(SpringApplication.java:1290) ~[spring-boot-2.6.1.jar:2.6.1]
+        at com.microservices.currencyexchangeservice.CurrencyExchangeServiceApplication.main(CurrencyExchangeServiceApplication.java:15) ~[classes/:0.0.1-SNAPSHOT]
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_312]
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_312]
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_312]
+        at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_312]
+        at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49) ~[workspace/:na]
+        at org.springframework.boot.loader.Launcher.launch(Launcher.java:108) ~[workspace/:na]
+        at org.springframework.boot.loader.Launcher.launch(Launcher.java:58) ~[workspace/:na]
+        at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:88) ~[workspace/:na]
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+        at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_312]
+        at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_312]
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_312]
+        at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[na:1.8.0_312]
+        at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.NativeSession.connect(NativeSession.java:120) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:948) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:818) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        ... 57 common frames omitted
+Caused by: java.net.UnknownHostException: sql_db: No address associated with hostname
+        at java.net.Inet4AddressImpl.lookupAllHostAddr(Native Method) ~[na:1.8.0_312]
+        at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929) ~[na:1.8.0_312]
+        at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324) ~[na:1.8.0_312]
+        at java.net.InetAddress.getAllByName0(InetAddress.java:1277) ~[na:1.8.0_312]
+        at java.net.InetAddress.getAllByName(InetAddress.java:1193) ~[na:1.8.0_312]
+        at java.net.InetAddress.getAllByName(InetAddress.java:1127) ~[na:1.8.0_312]
+        at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:133) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        ... 60 common frames omitted
+
+2022-01-04 07:18:03.099  WARN [curency-exchange-service,,] 1 --- [           main] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
+
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+        at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:448) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-4.0.3.jar:na]
+        at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364) ~[HikariCP-4.0.3.jar:na]
+        at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-4.0.3.jar:na]
+        at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476) ~[HikariCP-4.0.3.jar:na]
+        at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) ~[HikariCP-4.0.3.jar:na]
+        at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-4.0.3.jar:na]
+        at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-4.0.3.jar:na]
+        at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:181) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:178) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:175) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1460) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1494) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) [spring-orm-5.3.13.jar:5.3.13]
+        at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) [spring-orm-5.3.13.jar:5.3.13]
+        at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) [spring-orm-5.3.13.jar:5.3.13]
+        at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) [spring-orm-5.3.13.jar:5.3.13]
+        at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) [spring-orm-5.3.13.jar:5.3.13]
+        at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) [spring-beans-5.3.13.jar:5.3.13]
+        at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) [spring-beans-5.3.13.jar:5.3.13]
+        at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) [spring-beans-5.3.13.jar:5.3.13]
+        at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) [spring-beans-5.3.13.jar:5.3.13]
+        at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) [spring-beans-5.3.13.jar:5.3.13]
+        at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.13.jar:5.3.13]
+        at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) [spring-beans-5.3.13.jar:5.3.13]
+        at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) [spring-beans-5.3.13.jar:5.3.13]
+        at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.13.jar:5.3.13]
+        at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.13.jar:5.3.13]
+        at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.13.jar:5.3.13]
+        at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.1.jar:2.6.1]
+        at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:730) ~[spring-boot-2.6.1.jar:2.6.1]
+        at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:412) ~[spring-boot-2.6.1.jar:2.6.1]
+        at org.springframework.boot.SpringApplication.run(SpringApplication.java:302) ~[spring-boot-2.6.1.jar:2.6.1]
+        at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.1.jar:2.6.1]
+        at org.springframework.boot.SpringApplication.run(SpringApplication.java:1290) ~[spring-boot-2.6.1.jar:2.6.1]
+        at com.microservices.currencyexchangeservice.CurrencyExchangeServiceApplication.main(CurrencyExchangeServiceApplication.java:15) ~[classes/:0.0.1-SNAPSHOT]
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_312]
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_312]
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_312]
+        at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_312]
+        at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49) ~[workspace/:na]
+        at org.springframework.boot.loader.Launcher.launch(Launcher.java:108) ~[workspace/:na]
+        at org.springframework.boot.loader.Launcher.launch(Launcher.java:58) ~[workspace/:na]
+        at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:88) ~[workspace/:na]
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+        at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_312]
+        at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_312]
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_312]
+        at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[na:1.8.0_312]
+        at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.NativeSession.connect(NativeSession.java:120) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:948) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:818) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        ... 57 common frames omitted
+Caused by: java.net.UnknownHostException: sql_db: No address associated with hostname
+        at java.net.Inet4AddressImpl.lookupAllHostAddr(Native Method) ~[na:1.8.0_312]
+        at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929) ~[na:1.8.0_312]
+        at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324) ~[na:1.8.0_312]
+        at java.net.InetAddress.getAllByName0(InetAddress.java:1277) ~[na:1.8.0_312]
+        at java.net.InetAddress.getAllByName(InetAddress.java:1193) ~[na:1.8.0_312]
+        at java.net.InetAddress.getAllByName(InetAddress.java:1127) ~[na:1.8.0_312]
+        at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:133) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        ... 60 common frames omitted
+
+2022-01-04 07:18:03.136  INFO [curency-exchange-service,,] 1 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+Hibernate: drop table if exists currency_exchange
+2022-01-04 07:18:05.497  INFO [curency-exchange-service,,] 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-01-04 07:18:05.500  WARN [curency-exchange-service,,] 1 --- [           main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2022-01-04 07:18:06.507 ERROR [curency-exchange-service,,] 1 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+        at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:448) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-4.0.3.jar:na]
+        at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364) ~[HikariCP-4.0.3.jar:na]
+        at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-4.0.3.jar:na]
+        at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476) [HikariCP-4.0.3.jar:na]
+        at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) [HikariCP-4.0.3.jar:na]
+        at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) [HikariCP-4.0.3.jar:na]
+        at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) [HikariCP-4.0.3.jar:na]
+        at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:181) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:44) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.jdbcStatement(GenerationTargetToDatabase.java:77) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:53) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:241) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:153) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:81) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:327) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498) [hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) [spring-orm-5.3.13.jar:5.3.13]
+        at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) [spring-orm-5.3.13.jar:5.3.13]
+        at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) [spring-orm-5.3.13.jar:5.3.13]
+        at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) [spring-orm-5.3.13.jar:5.3.13]
+        at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) [spring-orm-5.3.13.jar:5.3.13]
+        at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) [spring-beans-5.3.13.jar:5.3.13]
+        at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) [spring-beans-5.3.13.jar:5.3.13]
+        at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) [spring-beans-5.3.13.jar:5.3.13]
+        at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) [spring-beans-5.3.13.jar:5.3.13]
+        at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) [spring-beans-5.3.13.jar:5.3.13]
+        at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.13.jar:5.3.13]
+        at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) [spring-beans-5.3.13.jar:5.3.13]
+        at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) [spring-beans-5.3.13.jar:5.3.13]
+        at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.13.jar:5.3.13]
+        at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.13.jar:5.3.13]
+        at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.13.jar:5.3.13]
+        at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.1.jar:2.6.1]
+        at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:730) ~[spring-boot-2.6.1.jar:2.6.1]
+        at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:412) ~[spring-boot-2.6.1.jar:2.6.1]
+        at org.springframework.boot.SpringApplication.run(SpringApplication.java:302) ~[spring-boot-2.6.1.jar:2.6.1]
+        at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.1.jar:2.6.1]
+        at org.springframework.boot.SpringApplication.run(SpringApplication.java:1290) ~[spring-boot-2.6.1.jar:2.6.1]
+        at com.microservices.currencyexchangeservice.CurrencyExchangeServiceApplication.main(CurrencyExchangeServiceApplication.java:15) ~[classes/:0.0.1-SNAPSHOT]
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_312]
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_312]
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_312]
+        at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_312]
+        at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49) ~[workspace/:na]
+        at org.springframework.boot.loader.Launcher.launch(Launcher.java:108) ~[workspace/:na]
+        at org.springframework.boot.loader.Launcher.launch(Launcher.java:58) ~[workspace/:na]
+        at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:88) ~[workspace/:na]
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+        at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_312]
+        at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_312]
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_312]
+        at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[na:1.8.0_312]
+        at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.NativeSession.connect(NativeSession.java:120) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:948) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:818) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        ... 57 common frames omitted
+Caused by: java.net.UnknownHostException: sql_db
+        at java.net.InetAddress.getAllByName0(InetAddress.java:1281) ~[na:1.8.0_312]
+        at java.net.InetAddress.getAllByName(InetAddress.java:1193) ~[na:1.8.0_312]
+        at java.net.InetAddress.getAllByName(InetAddress.java:1127) ~[na:1.8.0_312]
+        at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:133) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        ... 60 common frames omitted
+
+2022-01-04 07:18:06.509  WARN [curency-exchange-service,,] 1 --- [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 08S01
+2022-01-04 07:18:06.510 ERROR [curency-exchange-service,,] 1 --- [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2022-01-04 07:18:06.519 ERROR [curency-exchange-service,,] 1 --- [           main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+2022-01-04 07:18:06.521  WARN [curency-exchange-service,,] 1 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+2022-01-04 07:18:07.528  WARN [curency-exchange-service,,] 1 --- [           main] z.r.AsyncReporter$BoundedAsyncReporter   : Timed out waiting for in-flight spans to send
+2022-01-04 07:18:07.533  INFO [curency-exchange-service,,] 1 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-01-04 07:18:07.611  INFO [curency-exchange-service,,] 1 --- [           main] ConditionEvaluationReportLoggingListener :
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-01-04 07:18:07.712 ERROR [curency-exchange-service,,] 1 --- [           main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+        at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-5.3.13.jar:5.3.13]
+        at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.13.jar:5.3.13]
+        at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.13.jar:5.3.13]
+        at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.13.jar:5.3.13]
+        at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.13.jar:5.3.13]
+        at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.13.jar:5.3.13]
+        at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.13.jar:5.3.13]
+        at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.13.jar:5.3.13]
+        at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.13.jar:5.3.13]
+        at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.13.jar:5.3.13]
+        at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.1.jar:2.6.1]
+        at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:730) [spring-boot-2.6.1.jar:2.6.1]
+        at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:412) [spring-boot-2.6.1.jar:2.6.1]
+        at org.springframework.boot.SpringApplication.run(SpringApplication.java:302) [spring-boot-2.6.1.jar:2.6.1]
+        at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) [spring-boot-2.6.1.jar:2.6.1]
+        at org.springframework.boot.SpringApplication.run(SpringApplication.java:1290) [spring-boot-2.6.1.jar:2.6.1]
+        at com.microservices.currencyexchangeservice.CurrencyExchangeServiceApplication.main(CurrencyExchangeServiceApplication.java:15) [classes/:0.0.1-SNAPSHOT]
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_312]
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_312]
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_312]
+        at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_312]
+        at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49) [workspace/:na]
+        at org.springframework.boot.loader.Launcher.launch(Launcher.java:108) [workspace/:na]
+        at org.springframework.boot.loader.Launcher.launch(Launcher.java:58) [workspace/:na]
+        at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:88) [workspace/:na]
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+        at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421) ~[spring-orm-5.3.13.jar:5.3.13]
+        at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.13.jar:5.3.13]
+        at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.13.jar:5.3.13]
+        at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.13.jar:5.3.13]
+        at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.13.jar:5.3.13]
+        ... 24 common frames omitted
+Caused by: org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+        at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:112) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:37) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:71) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.jdbcStatement(GenerationTargetToDatabase.java:77) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:53) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:241) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:153) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:81) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:327) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.13.jar:5.3.13]
+        at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.13.jar:5.3.13]
+        at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.13.jar:5.3.13]
+        ... 28 common frames omitted
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+        at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:448) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-4.0.3.jar:na]
+        at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364) ~[HikariCP-4.0.3.jar:na]
+        at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-4.0.3.jar:na]
+        at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476) ~[HikariCP-4.0.3.jar:na]
+        at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) ~[HikariCP-4.0.3.jar:na]
+        at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-4.0.3.jar:na]
+        at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-4.0.3.jar:na]
+        at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:181) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:44) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+        ... 44 common frames omitted
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+        at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_312]
+        at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_312]
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_312]
+        at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[na:1.8.0_312]
+        at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.NativeSession.connect(NativeSession.java:120) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:948) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:818) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        ... 57 common frames omitted
+Caused by: java.net.UnknownHostException: sql_db
+        at java.net.InetAddress.getAllByName0(InetAddress.java:1281) ~[na:1.8.0_312]
+        at java.net.InetAddress.getAllByName(InetAddress.java:1193) ~[na:1.8.0_312]
+        at java.net.InetAddress.getAllByName(InetAddress.java:1127) ~[na:1.8.0_312]
+        at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:133) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+        ... 60 common frames omitted
+
+Exception in thread "Thread-4" zipkin2.reporter.ClosedSenderException
+        at zipkin2.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:265)
+        at org.springframework.cloud.sleuth.autoconfig.zipkin2.ZipkinAutoConfiguration$2.run(ZipkinAutoConfiguration.java:142)
+
+Native Memory Tracking:
+
+Total: reserved=12475460KB, committed=980604KB
+-                 Java Heap (reserved=10668032KB, committed=482816KB)
+                            (mmap: reserved=10668032KB, committed=482816KB)
+
+-                     Class (reserved=1104132KB, committed=63620KB)
+                            (classes #10894)
+                            (malloc=6404KB #13542)
+                            (mmap: reserved=1097728KB, committed=57216KB)
+
+-                    Thread (reserved=15444KB, committed=15444KB)
+                            (thread #15)
+                            (stack: reserved=15380KB, committed=15380KB)
